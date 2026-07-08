@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict Revenue</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">🍽 Restaurant Revenue Prediction</div>
+
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/predict-page">Predict</a></li>
+        <li><a href="/history">History</a></li>
+        <li><a href="/about">About</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+
+    <div class="card">
+
+        <h1>Revenue Prediction</h1>
+
+        <input type="number" id="seating_capacity" placeholder="🍽 Seating Capacity">
+
+        <input type="number" id="average_meal_price" placeholder="💰 Average Meal Price">
+
+        <input type="number" id="marketing_budget" placeholder="📢 Marketing Budget">
+
+        <input type="number" id="social_media_followers" placeholder="📱 Social Media Followers">
+
+        <input type="number" id="weekend_reservations" placeholder="📅 Weekend Reservations">
+
+        <input type="number" id="weekday_reservations" placeholder="📆 Weekday Reservations">
+
+        <button onclick="predictRevenue()">
+            <i class="fa-solid fa-chart-line"></i>
+            Predict Revenue
+        </button>
+
+        <!-- Loading -->
+        <div id="loader" style="display:none; text-align:center; margin-top:20px;">
+            <div class="spinner"></div>
+            <p>Predicting Revenue...</p>
+        </div>
+
+        <!-- Result -->
+        <h2 id="result"></h2>
+
+        <!-- Chart -->
+        <canvas id="revenueChart" height="120"></canvas>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="/static/script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction History</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">🍽 Restaurant Revenue Prediction</div>
+
+    <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="/predict-page">Predict</a></li>
+        <li><a href="/history">History</a></li>
+        <li><a href="/about">About</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+
+<div class="card" style="width:95%;">
+
+<h1>Prediction History</h1>
+
+<table>
+
+<tr>
+<th>ID</th>
+<th>Seating</th>
+<th>Meal Price</th>
+<th>Marketing</th>
+<th>Followers</th>
+<th>Weekend</th>
+<th>Weekday</th>
+<th>Revenue</th>
+</tr>
+
+{% for row in predictions %}
+
+<tr>
+<td>{{ row.id }}</td>
+<td>{{ row.seating_capacity }}</td>
+<td>{{ row.average_meal_price }}</td>
+<td>{{ row.marketing_budget }}</td>
+<td>{{ row.social_media_followers }}</td>
+<td>{{ row.weekend_reservations }}</td>
+<td>{{ row.weekday_reservations }}</td>
+<td>₹ {{ row.predicted_revenue }}</td>
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+</div>
+
+</body>
+</html>

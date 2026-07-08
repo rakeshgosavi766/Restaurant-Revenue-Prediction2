@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Restaurant Revenue Prediction</title>
+
+<link rel="stylesheet" href="/static/style.css">
+
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<nav>
+    <h2><i class="fa-solid fa-utensils"></i> Restaurant Revenue Prediction System</h2>
+</nav>
+
+<div class="container">
+
+<div class="card">
+
+<h1>Predict Restaurant Revenue</h1>
+
+<p class="subtitle">
+Enter restaurant details below
+</p>
+
+<input type="number" id="seating_capacity" placeholder="🍽 Seating Capacity">
+
+<input type="number" id="average_meal_price" placeholder="💰 Average Meal Price">
+
+<input type="number" id="marketing_budget" placeholder="📢 Marketing Budget">
+
+<input type="number" id="social_media_followers" placeholder="📱 Social Media Followers">
+
+<input type="number" id="weekend_reservations" placeholder="📅 Weekend Reservations">
+
+<input type="number" id="weekday_reservations" placeholder="📆 Weekday Reservations">
+
+<button onclick="predictRevenue()">
+<i class="fa-solid fa-chart-line"></i>
+Predict Revenue
+</button>
+
+<h2 id="result"></h2>
+
+</div>
+
+</div>
+
+<footer>
+Made with ❤️ using FastAPI | Machine Learning | PostgreSQL
+</footer>
+
+<script src="/static/script.js"></script>
+
+</body>
+</html>
