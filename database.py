@@ -1,7 +1,13 @@
+import os
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 
-DATABASE_URL = "postgresql://postgres:Admin@localhost:5432/ml_database"
+# Render वर DATABASE_URL Environment Variable मधून घे
+DATABASE_URL = os.getenv("DATABASE_URL")
+
+# Local वर चालवायचं असल्यास fallback
+if DATABASE_URL is None:
+    DATABASE_URL = "postgresql://postgres:Admin@localhost:5432/ml_database"
 
 engine = create_engine(DATABASE_URL)
 
