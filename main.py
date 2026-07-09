@@ -40,8 +40,6 @@ Base.metadata.create_all(bind=engine)
 # ML Model
 model = joblib.load("restaurant_revenue_model.pkl")
 
-# Static
-app.mount("/static", StaticFiles(directory="static"), name="static")
 
 templates = Jinja2Templates(directory="templates")
 @app.get("/", response_class=HTMLResponse)
